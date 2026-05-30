@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  activemq:
+    image: apache/activemq-artemis:latest
+    container_name: activemq-broker
+    ports:
+      # 61616 is the core OpenWire/JMS port that Apache Camel will connect to
+      - "61616:61616"
+      # 8161 is the port for the web administration console
+      - "8161:8161"
+    environment:
+      # Configures the administrator credentials (matches your application.properties)
+      - ARTEMIS_USER=admin
+      - ARTEMIS_PASSWORD=admin
+    volumes:
+      # Optional: Persists your message queues even if you destroy the container
+      - activemq-data:/var/lib/artemis/data
+
+volumes:
+  activemq-data:
