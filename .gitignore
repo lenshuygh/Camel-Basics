@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+data/orders/order02.txt
+data/orders/order03.pdf
+data/orders/processed-csv/order01.csv
+data/orders/processed_txt/order02.txt
+data/orders/skipped/order03.pdf
